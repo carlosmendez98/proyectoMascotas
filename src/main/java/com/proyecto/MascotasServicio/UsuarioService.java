@@ -1,20 +1,24 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Interface.java to edit this template
- */
 package com.proyecto.MascotasServicio;
 
 import java.util.List;
 import com.proyecto.MascotasEntity.Usuarios;
+import java.util.Optional;
 
 /**
  *
  * @author Carlos Valencia
  */
 public interface UsuarioService {
-    // ver listado de Usuarios
+   
     public List<Usuarios> Usuarios();
     
+    public Optional<Usuarios> usuarioPorID(int id);
+    
+    public Usuarios crearUsuario(Usuarios usuario);
+    
+    public void eliminarUsuario(int id);
+    
+    public Usuarios modificarUsuario(Usuarios usuario);
     
     
 }

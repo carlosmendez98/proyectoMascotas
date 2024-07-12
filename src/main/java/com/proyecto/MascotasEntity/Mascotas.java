@@ -1,6 +1,7 @@
 
 package com.proyecto.MascotasEntity;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import lombok.Data;
 import javax.persistence.*;
 import java.io.Serializable;
@@ -15,40 +16,40 @@ public class Mascotas implements Serializable {
 
    @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "idMascotas")
-    private int idMascotas;
+    @Column(name = "idmascotas")
+    private int idmascotas;
 
    
     @Column(name = "Nombre")
-    private String Nombre;
+    private String nombre;
 
     @Column(name = "Especie")
-    private String Especie;
+    private String especie;
 
     @Column(name = "Raza")
-    private String Raza;
+    private String raza;
 
     @Column(name = "Edad")
-    private int Edad;
+    private int edad;
 
     @Column(name = "Tamano")
-    private double Tamano;
+    private double tamano;
 
     @Column(name = "Descripcion")
-    private String Descripcion;
+    private String descripcion;
 
     @Column(name = "Fotos")
-    private String Fotos;
+    private String fotos;
 
     @Column(name = "Estado")
-    private String Estado;
+    private String estado;
 
-   @Column(name = "FechaDeIngreso")
+   @Column(name = "fechadeingreso")
     @Temporal(TemporalType.DATE)
-    private Date FechaDeIngreso;
+    private Date fechadeIngreso;
    
     @ManyToOne
-    @JoinColumn(name = "idRefugio")
-    private PerfilRefugio idRefugio; // relación con la entidad PerfilRefugio
-
+    @JoinColumn(name = "idRefugio", referencedColumnName = "idRefugio")
+    @JsonBackReference
+    private PerfilRefugio perfilRefugio;
 }

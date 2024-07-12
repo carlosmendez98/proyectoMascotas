@@ -2,6 +2,7 @@
 package com.proyecto.MascotasEntity;
 
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import lombok.Data;
 import javax.persistence.*;
 import java.io.Serializable;
@@ -17,12 +18,12 @@ public class PerfilRefugio implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "idRefugio")
-    private int idRefugio;
+    @Column(name = "idrefugio")
+    private int idrefugio;
     
 
-    @Column(name = "Nombre_Refugio")
-    private String Nombre_Refugio;
+    @Column(name = "nombre_refugio")
+    private String nombre_refugio;
     
     @Column(name = "Direccion")
     private String Direccion;
@@ -30,15 +31,14 @@ public class PerfilRefugio implements Serializable {
     @Column(name = "Telefono")
     private String Telefono;
     
-       @Column(name = "emailContacto")
-    private String emailContacto;
+       @Column(name = "emailcontacto")
+    private String emailcontacto;
     
-      @OneToMany(mappedBy = "idRefugio")
+       @OneToMany(mappedBy = "perfilRefugio")
     private List<Mascotas> mascotas;
     
-     @ManyToOne
-    @JoinColumn(name = "idUsuarios")
-    private Usuarios idUsuarios;
-    
+   @ManyToOne
+    @JoinColumn(name = "idusuarios", referencedColumnName = "idusuarios")
+    private Usuarios idusuario;
      
 }

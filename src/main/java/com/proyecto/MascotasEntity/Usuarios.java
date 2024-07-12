@@ -1,7 +1,6 @@
-
 package com.proyecto.MascotasEntity;
 
-
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import lombok.Data;
 import javax.persistence.*;
 import java.io.Serializable;
@@ -16,29 +15,29 @@ public class Usuarios implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "idUsuarios")
-    private int idUsuarios;
+    @Column(name = "idusuarios")
+    private int idusuarios;
 
     @Column(name = "Nombre")
-    private String Nombre;
+    private String nombre;
 
     @Column(name = "Email")
-    private String Email;
+    private String email;
 
     @Column(name = "Contrasena")
-   private String Contrasena;
+    private String contrasena;
 
     @Column(name = "Rol")
-    private String Rol;
+    private String rol;
 
-    @Column(name = "Fecha_de_Creacion")
+    @Column(name = "fecha_de_creacion")
     @Temporal(TemporalType.DATE)
-    private Date Fecha_de_Creacion;
+    private Date fecha_de_creacion;
 
-    @OneToMany(mappedBy = "idUsuarios")
+   @OneToMany(mappedBy = "usuarios")
     private List<PerfilAdoptante> perfilAdoptantes;
 
-    @OneToMany(mappedBy = "idUsuarios")
+  @OneToMany(mappedBy = "idusuario")
     private List<PerfilRefugio> perfilRefugios;
 
 }

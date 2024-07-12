@@ -14,8 +14,8 @@ public class PerfilAdoptante implements Serializable {
     private static final long serialVersionUID = 1L;
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "idPerfilAdoptante")
-    private int idPerfilAdoptante;
+    @Column(name = "idperfiladoptante")
+    private int idperfiladoptante;
 
     @Column(name = "Nombre")
     private String Nombre;
@@ -29,11 +29,10 @@ public class PerfilAdoptante implements Serializable {
     @Column(name = "Telefono")
     private String Telefono;
 
-    @Column(name = "Historial_De_Adopciones")
-    private String historialDeAdopcion;
+    @Column(name = "historial_de_adopciones")
+    private String historial_de_Adopcion;
 
-     @ManyToOne
-    @JoinColumn(name = "idUsuarios")
-    private Usuarios idUsuarios; // relación con el usuario, muchos adoptantes pueden tener 1 usuario
-
+ @ManyToOne
+    @JoinColumn(name = "idusuarios")
+    private Usuarios usuarios;
 }
