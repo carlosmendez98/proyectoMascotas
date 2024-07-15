@@ -40,6 +40,8 @@
 			<scope>runtime</scope>
 			<optional>true</optional>
 		</dependency>
+                
+                
 <!-- Dependencia del conector JDBC de MySQL -->
 <dependency>
     <groupId>mysql</groupId>
@@ -57,8 +59,15 @@
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
-	</dependencies>
+    <dependency>
+        <groupId>org.flywaydb</groupId>
+        <artifactId>flyway-core</artifactId>
+        <version>7.15.0</version>
+    </dependency>
 
+        </dependencies>
+        
+     
 	<build>
 		<plugins>
 			<plugin>
