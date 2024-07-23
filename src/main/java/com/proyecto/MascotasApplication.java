@@ -12,7 +12,7 @@ public class MascotasApplication {
 		SpringApplication.run(MascotasApplication.class, args);
                 
                           BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
-        String plainPassword = "0000";
+        String plainPassword = "123456";
         String encodedPassword = passwordEncoder.encode(plainPassword);
         
         System.out.println("Contraseña en texto plano: " + plainPassword);
