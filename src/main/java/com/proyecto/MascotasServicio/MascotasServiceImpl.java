@@ -5,6 +5,7 @@ import com.proyecto.MascotasEntity.Mascotas;
 import java.util.List;
 import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
+
 import org.springframework.stereotype.Service;
 
 @Service
@@ -44,6 +45,11 @@ public class MascotasServiceImpl implements MascotasService {
     public Mascotas actualizarMascota(Mascotas mascota) {
        return this.mascotasRepository.save(mascota);
 
+    }
+// ACTUALIZAR A LAS ULTIMAS 10 MASCOTAS 
+    @Override
+    public List<Mascotas> listadoUltimasMascotas() {
+    return this.mascotasRepository.listadoUltimasMascotas();
     }
 
 }

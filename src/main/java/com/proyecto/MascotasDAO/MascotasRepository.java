@@ -1,11 +1,10 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Interface.java to edit this template
- */
+
 package com.proyecto.MascotasDAO;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import com.proyecto.MascotasEntity.Mascotas;
+import java.util.List;
+import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
 
@@ -16,4 +15,6 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface MascotasRepository extends JpaRepository<Mascotas, Integer>{
     
+ @Query("SELECT m FROM Mascotas m ORDER BY m.idmascotas DESC")
+    List<Mascotas> listadoUltimasMascotas();
 }

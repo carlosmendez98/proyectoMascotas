@@ -18,5 +18,7 @@ public interface MascotasService {
     
     public Mascotas actualizarMascota(Mascotas mascota);
     
+    public List<Mascotas> listadoUltimasMascotas();
+    
     
 }
