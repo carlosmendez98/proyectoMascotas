@@ -49,7 +49,7 @@ public class MascotasServiceImpl implements MascotasService {
 // ACTUALIZAR A LAS ULTIMAS 10 MASCOTAS 
     @Override
     public List<Mascotas> listadoUltimasMascotas() {
-    return this.mascotasRepository.listadoUltimasMascotas();
+    return this.mascotasRepository.findTop10ByOrderByIdmascotasDesc();
     }
 
 }

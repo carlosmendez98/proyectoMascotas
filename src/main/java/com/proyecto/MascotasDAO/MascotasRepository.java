@@ -15,6 +15,6 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface MascotasRepository extends JpaRepository<Mascotas, Integer>{
     
- @Query("SELECT m FROM Mascotas m ORDER BY m.idmascotas DESC")
-    List<Mascotas> listadoUltimasMascotas();
+   @Query("SELECT m FROM Mascotas m ORDER BY m.idmascotas DESC")
+    List<Mascotas> findTop10ByOrderByIdmascotasDesc();
 }
